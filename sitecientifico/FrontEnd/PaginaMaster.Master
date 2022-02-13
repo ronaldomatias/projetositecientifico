@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaster.master.cs" Inherits="sitecientifico.FrontEnd.PaginaMaster" %>
+
+<!DOCTYPE html>
+<html>
+
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloMasterPage.css" />
+
+    <asp:ContentPlaceHolder ID="script" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" method="post" runat="server">
+
+        <div class="cabecalho">
+            <div class="botoesMenu" runat="server">
+                <asp:Button class="botaoCabecalho" Text="Novo artigo"  PostBackUrl="~/FrontEnd/Site/CriarArtigo.aspx" runat="server" />
+                <asp:Button class="botaoCabecalho" Text="Astronomia" runat="server" />
+                <asp:Button class="botaoCabecalho" Text="Ler Artigos" PostBackUrl="~/FrontEnd/Site/VisualizarArtigos.aspx" runat="server" />
+            </div>
+        </div>
+
+        <div class="centro" runat="server">
+            <asp:ContentPlaceHolder ID="conteudo" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

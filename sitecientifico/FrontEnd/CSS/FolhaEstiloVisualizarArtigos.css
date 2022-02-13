@@ -1,0 +1,51 @@
+﻿.divConteudo {
+    background-color: darkslategray;
+    text-align: center;
+    width: 50%;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: groove;
+    border-color: green;
+}
+
+
+.divPlaceHolder {
+    display: inline-block;
+    margin: 10px auto;
+    background-color: green;
+    width: 90%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.labelTitulo {
+    display: flow;
+    color: white;
+    word-wrap: break-word;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: black;
+}
+
+.labelDescricao {
+    display: inline-block;
+    color: white;
+    word-wrap: break-word;
+    margin-bottom: 50px;
+    font-size: 20px;
+    background-color: black;
+    text-align: justify;
+    margin: 10px;
+}
+
+.painel {
+    background-color: black;
+    border-style: solid;
+    border-color: green;
+}
+
+.painelEspacador {
+    background-color: darkslategray;
+    height: 25px;
+}

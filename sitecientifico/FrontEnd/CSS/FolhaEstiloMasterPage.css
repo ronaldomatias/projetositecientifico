@@ -1,0 +1,59 @@
+﻿* {
+    margin: 0 0 0 0px;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: green;
+}
+
+
+/*CABEÇALHO*/
+.cabecalho {
+    display: flex;
+    margin: 5px auto;
+    padding: 5px;
+    border-radius: 10px;
+    max-width: 98%;
+    height: 110px;
+    align-items: end;
+    justify-content: end;
+    background-image: url("/Imagens/Banner2.jpg");
+}
+
+.botoesMenu {
+    display: flex;
+    padding: 3px;
+}
+
+.botaoCabecalho {
+    Font-Size: 20px;
+    background-color: green;
+    border-radius: 3px;
+    font-family: 'Rockwell Condensed';
+    margin: 3px;
+    border: 0px;
+}
+
+    .botaoCabecalho:hover {
+        background-color: white;
+        opacity: 0.5;
+    }
+
+
+/*CENTRO*/
+.centro {
+    display: flex;
+    background-color: black;
+    padding: 5px;
+    margin: 5px auto;
+    border-radius: 10px;
+    min-width: 320px;
+    max-width: 98%;
+    min-height: 400px;
+}
+
+
+
+
