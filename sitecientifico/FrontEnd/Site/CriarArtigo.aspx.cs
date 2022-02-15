@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,11 +15,13 @@ namespace sitecientifico.FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        public void NovoArtigo(object sender, EventArgs e)
+        [WebMethod]
+        public static void NovoArtigo()
         {
+            /*
             if(txtTitulo.Text.Length.Equals(0) || txtDescricao.Text.Length.Equals(0))
             {
                 Response.Write("<script>confirm('Insira algum conteúdo!') </script");
@@ -40,9 +43,11 @@ namespace sitecientifico.FrontEnd
 
                     Response.Write("<script>alert('Novo artigo publicado com sucesso!') </script");
                 }
-            }
-
-            
+            }*/
         }
+
+
+
+
     }
 }

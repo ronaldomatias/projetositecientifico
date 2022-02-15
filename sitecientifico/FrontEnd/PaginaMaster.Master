@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloMasterPage.css" />
 
-    <asp:ContentPlaceHolder ID="script" runat="server">
+    <asp:ContentPlaceHolder  ID="script" runat="server">
     </asp:ContentPlaceHolder>
 
 </head>
@@ -29,6 +29,9 @@
 
     </form>
 
+    <asp:ContentPlaceHolder ID="scriptFinal" runat="server">
+    </asp:ContentPlaceHolder>
 </body>
 
 </html>
+
