@@ -2,18 +2,31 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="script" runat="server">
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloCriarArtigo.css" />
+    <script src="../../Scripts/jquery-3.6.0.min.js"></script>
 
-    <script defer="defer" type="text/javascript">
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
+    <script type="text/javascript">
 
-        function funcao() {
-            const _titulo = document.getElementById('<%= txtTitulo.ClientID %>').value;
-            const _descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
+        $(document).ready(function Salvar() {
+            var titulo    = document.getElementById('<%= txtTitulo.ClientID %>').value;
+            var descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
 
-            alert(_titulo + " " + _descricao);
-        }
+                $.ajax({
+                    method: 'POST',
+                    contentType: 'application/json',
+                    url: 'CriarArtigo.aspx/NovoArtigo',
+                    data: '{"txtTituloo": "' + titulo + '", "txtDescricaoo": "' + descricao + '"}',
+                    dataType: 'json',
+
+                    success: function () {
+                        alert("foiiii");
+                    },
+                    error: function (error) {
+                        alert(error.responseText);
+                    }
+                });
+        });
+
+
     </script>
 </asp:Content>
 
@@ -27,7 +40,7 @@
                     <asp:Label CssClass="labelInfo" Width="20%" runat="server">Título</asp:Label>
                 </td>
                 <td style="width: 90%">
-                    <asp:TextBox ID="txtTitulo" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTitulo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
                 </td>
             </tr>
 
@@ -43,17 +56,15 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Button ID="botao" class="botaoFormulario" Text="Cadastrar" OnClientClick="funcao();" runat="server" />
+                    <asp:Button ID="botao" class="botaoFormulario" Text="Cadastrar" OnClientClick="Salvar();" runat="server" />
                 </td>
             </tr>
         </table>
     </div>
-   
-     
-   
+
+
+
 </asp:Content>
 
 <asp:Content ID="content3" ContentPlaceHolderID="scriptFinal" runat="server">
-
-    
 </asp:Content>

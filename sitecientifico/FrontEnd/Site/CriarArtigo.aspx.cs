@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
 using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,38 +16,20 @@ namespace sitecientifico.FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
         }
 
         [WebMethod]
-        public static void NovoArtigo()
+        public static void NovoArtigo(string txtTituloo, string txtDescricaoo)
         {
-            /*
-            if(txtTitulo.Text.Length.Equals(0) || txtDescricao.Text.Length.Equals(0))
+            /*if(txtTitulo.Length.Equals(0) || txtDescricao.Length.Equals(0))
             {
-                Response.Write("<script>confirm('Insira algum conteúdo!') </script");
-            }
-            else
-            {
-                Artigo artigo = new Artigo(txtTitulo.Text, txtDescricao.Text);
-
-                using (NpgsqlConnection con = Conexao.ObterConexao())
-                {
-                    NpgsqlCommand sqlComando = new NpgsqlCommand("INSERT INTO artigo VALUES(default, @titulo, @descricao)", con);
-                    sqlComando.Parameters.AddWithValue("titulo", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Titulo;
-                    sqlComando.Parameters.AddWithValue("descricao", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Descricao;
-                    sqlComando.CommandType = System.Data.CommandType.Text;
-
-                    con.Open();
-                    sqlComando.ExecuteNonQuery();
-                    con.Close();
-
-                    Response.Write("<script>alert('Novo artigo publicado com sucesso!') </script");
-                }
             }*/
+
+            Artigo artigo = new Artigo(txtTituloo, "teste");
+
+            ArtigoDAO artigoDAO = new ArtigoDAO();
+            artigoDAO.NovoArtigo(artigo);
         }
-
-
 
 
     }

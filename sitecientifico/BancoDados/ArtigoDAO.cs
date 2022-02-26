@@ -11,7 +11,6 @@ namespace sitecientifico.BancoDados
     public class ArtigoDAO
     {
 
-
         public List<Artigo> ProcurarArtigos()
         {
             List<Artigo> lista = new List<Artigo>();
@@ -35,6 +34,21 @@ namespace sitecientifico.BancoDados
             }
 
             return lista;
+        }
+
+        public void NovoArtigo(Artigo artigo)
+        {
+            using (NpgsqlConnection con = Conexao.ObterConexao())
+            {
+                NpgsqlCommand sqlComando = new NpgsqlCommand("INSERT INTO artigo VALUES(default, @titulo, @descricao)", con);
+                sqlComando.Parameters.AddWithValue("titulo", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Titulo;
+                sqlComando.Parameters.AddWithValue("descricao", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Descricao;
+                sqlComando.CommandType = System.Data.CommandType.Text;
+
+                con.Open();
+                sqlComando.ExecuteNonQuery();
+                con.Close();
+            }
         }
 
 

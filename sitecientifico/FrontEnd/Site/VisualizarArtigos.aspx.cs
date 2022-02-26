@@ -12,32 +12,32 @@ namespace sitecientifico.FrontEnd.Site
     public partial class VisualizarArtigos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            List<Artigo> lista = new ArtigoDAO().ProcurarArtigos();
+        {   
+
+            // MONTAGEM DA ÁREA DE VISUALIZAÇÃO DOS ARTIGOS;
+            List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigos();
             
-            foreach(Artigo artigo in lista)
+            foreach(Artigo artigo in listaArtigos)
             {
-                Panel painel = new Panel();
-                painel.Visible = true;
-                painel.CssClass = "painel";
+                Panel painelLabels = new Panel();
+                painelLabels.CssClass = "painelLabels";
 
-                Panel painel2 = new Panel();
-                painel2.Visible = true;
-                painel2.CssClass = "painelEspacador";
+                Panel painelEspacador = new Panel();
+                painelEspacador.CssClass = "painelEspacador";
 
-                Label label = new Label();
-                label.CssClass = "labelTitulo";
-                label.Text = artigo.Titulo;
+                Label lblTitulo = new Label();
+                lblTitulo.CssClass = "labelTitulo";
+                lblTitulo.Text = artigo.Titulo;
 
-                Label label2 = new Label();
-                label2.CssClass = "labelDescricao";
-                label2.Text = artigo.Descricao;
+                Label lblDescricao = new Label();
+                lblDescricao.CssClass = "labelDescricao";
+                lblDescricao.Text = artigo.Descricao;
 
-                painel.Controls.Add(label);
-                painel.Controls.Add(label2);
+                painelLabels.Controls.Add(lblTitulo);
+                painelLabels.Controls.Add(lblDescricao);
 
-                placeHolder.Controls.Add(painel);
-                placeHolder.Controls.Add(painel2);
+                placeHolder.Controls.Add(painelLabels);
+                placeHolder.Controls.Add(painelEspacador);
             }
 
         }
