@@ -1,6 +1,7 @@
 ﻿using Npgsql;
 using sitecientifico.BancoDados;
 using System;
+using System.Web.UI.WebControls;
 
 namespace sitecientifico.FrontEnd
 {
@@ -8,7 +9,6 @@ namespace sitecientifico.FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

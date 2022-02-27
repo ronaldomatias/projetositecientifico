@@ -6,31 +6,28 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloMasterPage.css" />
+    <script src="../../Scripts/jquery-3.6.0.min.js"></script>
 
-    <asp:ContentPlaceHolder  ID="script" runat="server">
-    </asp:ContentPlaceHolder>
-
+    <asp:ContentPlaceHolder ID="plhScript" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" method="post" runat="server">
-
         <div class="cabecalho">
             <div class="botoesMenu" runat="server">
-                <asp:Button class="botaoCabecalho" Text="Novo artigo"  PostBackUrl="~/FrontEnd/Site/CriarArtigo.aspx" runat="server" />
+                <asp:Button class="botaoCabecalho" Text="Novo artigo" PostBackUrl="~/FrontEnd/Site/CriarArtigo.aspx" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Astronomia" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Ler Artigos" PostBackUrl="~/FrontEnd/Site/VisualizarArtigos.aspx" runat="server" />
             </div>
         </div>
 
+        <asp:PlaceHolder ID="plhLinhaDoTempo" runat="server">
+            <asp:Label ID="lblLinhaDoTempo" ToolTip="Página onde você está navegando" CssClass="lblLinhaDoTempo" runat="server"></asp:Label>
+        </asp:PlaceHolder>
+
         <div class="centro" runat="server">
-            <asp:ContentPlaceHolder ID="conteudo" runat="server">
-            </asp:ContentPlaceHolder>
+            <asp:ContentPlaceHolder ID="plhConteudo" runat="server"></asp:ContentPlaceHolder>
         </div>
-
     </form>
-
-    <asp:ContentPlaceHolder ID="scriptFinal" runat="server">
-    </asp:ContentPlaceHolder>
 </body>
 
 </html>

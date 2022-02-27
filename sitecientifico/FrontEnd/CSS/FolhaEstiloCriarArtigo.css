@@ -11,7 +11,7 @@
 }
 
 
-.textBoxInfo{
+.textBoxInfo {
     border-radius: 5px;
     border-style: groove;
     border-color: green;
@@ -39,5 +39,3 @@
         color: black;
         opacity: 0.6;
     }
-
-

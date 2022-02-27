@@ -16,21 +16,18 @@ namespace sitecientifico.FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Label lblLinhaDoTempo = (Label) Master.FindControl("lblLinhaDoTempo");
+            lblLinhaDoTempo.Text = "~/criarArtigo";
         }
 
         [WebMethod]
         public static void NovoArtigo(string txtTituloo, string txtDescricaoo)
         {
-            /*if(txtTitulo.Length.Equals(0) || txtDescricao.Length.Equals(0))
-            {
-            }*/
-
-            Artigo artigo = new Artigo(txtTituloo, "teste");
+            Artigo artigo = new Artigo(txtTituloo, txtDescricaoo);
 
             ArtigoDAO artigoDAO = new ArtigoDAO();
             artigoDAO.NovoArtigo(artigo);
         }
-
 
     }
 }

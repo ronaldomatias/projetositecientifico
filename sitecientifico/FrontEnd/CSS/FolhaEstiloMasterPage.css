@@ -42,9 +42,23 @@ body {
     }
 
 
+/*LINHA DO TEMPO*/
+.lblLinhaDoTempo {
+    display: block;
+    color: white;
+    background-color: black;
+    margin: 5px auto;
+    border-radius: 10px;
+    min-width: 320px;
+    max-width: 98%;
+    font-size: 15px;
+    padding: 5px;
+}
+
+
 /*CENTRO*/
 .centro {
-    display: flex;
+    display: block;
     background-color: black;
     padding: 5px;
     margin: 5px auto;

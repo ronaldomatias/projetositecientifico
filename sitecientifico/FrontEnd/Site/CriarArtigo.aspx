@@ -1,36 +1,37 @@
 ﻿<%@ Page Title="Criar artigo" Language="C#" MasterPageFile="~/FrontEnd/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="CriarArtigo.aspx.cs" Inherits="sitecientifico.FrontEnd.CriarArtigo" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="script" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="plhScript" runat="server">
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloCriarArtigo.css" />
-    <script src="../../Scripts/jquery-3.6.0.min.js"></script>
 
     <script type="text/javascript">
 
-        $(document).ready(function Salvar() {
-            var titulo    = document.getElementById('<%= txtTitulo.ClientID %>').value;
-            var descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
+        function Salvar() {
 
-                $.ajax({
-                    method: 'POST',
-                    contentType: 'application/json',
-                    url: 'CriarArtigo.aspx/NovoArtigo',
-                    data: '{"txtTituloo": "' + titulo + '", "txtDescricaoo": "' + descricao + '"}',
-                    dataType: 'json',
+            var _titulo = document.getElementById('<%= txtTitulo.ClientID %>').value;
+            var _descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
 
-                    success: function () {
-                        alert("foiiii");
-                    },
-                    error: function (error) {
-                        alert(error.responseText);
-                    }
-                });
-        });
+            if (_titulo === '' || _descricao === '') alert("Insira o título e descrição do artigo!");
 
+            else $.ajax({
+                method: 'POST',
+                contentType: 'application/json',
+                url: 'CriarArtigo.aspx/NovoArtigo',
+                data: '{"txtTituloo": "' + _titulo + '", "txtDescricaoo": "' + _descricao + '"}',
+                dataType: 'json',
+
+                success: function () {
+                    alert("Salvo com sucesso!");
+                },
+                error: function (error) {
+                    alert(error.responseText);
+                }
+            });
+        }
 
     </script>
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="conteudo" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="plhConteudo" runat="server">
 
     <div class="divInfosArtigo">
 
@@ -56,15 +57,11 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Button ID="botao" class="botaoFormulario" Text="Cadastrar" OnClientClick="Salvar();" runat="server" />
+                    <asp:Button ID="botao" class="botaoFormulario" Text="Cadastrar" OnClientClick="Salvar(); return false;" runat="server" />
                 </td>
             </tr>
         </table>
     </div>
 
-
-
 </asp:Content>
 
-<asp:Content ID="content3" ContentPlaceHolderID="scriptFinal" runat="server">
-</asp:Content>

@@ -15,13 +15,13 @@ namespace sitecientifico.FrontEnd
     {
 
         /// <summary>
-        /// script control.
+        /// plhScript control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder script;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder plhScript;
 
         /// <summary>
         /// form1 control.
@@ -33,21 +33,30 @@ namespace sitecientifico.FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// conteudo control.
+        /// plhLinhaDoTempo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder conteudo;
+        protected global::System.Web.UI.WebControls.PlaceHolder plhLinhaDoTempo;
 
         /// <summary>
-        /// scriptFinal control.
+        /// lblLinhaDoTempo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder scriptFinal;
+        protected global::System.Web.UI.WebControls.Label lblLinhaDoTempo;
+
+        /// <summary>
+        /// plhConteudo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder plhConteudo;
     }
 }
