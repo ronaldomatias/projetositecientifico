@@ -55,10 +55,38 @@ body {
     padding: 5px;
 }
 
+.divPlhInformacaoRetorno {
+    display: flex;
+    padding: 5px;
+    background-color: pink;
+    border-radius: 10px;
+    justify-content: space-between;
+    margin: 5px 0.6%;
+    height: auto;
+}
+
+.lblInformacaoRetorno {
+    width: 98%;
+    word-wrap: break-word;
+    margin: 0 auto;
+}
+
+
+.btnFecharInformacao {
+    background-color: pink;
+    border: 0;
+    border-radius: 10px;
+    height: 2%;
+}
+    .btnFecharInformacao:hover {
+        background-color: yellow;
+        color: black;
+    }
+
 
 /*CENTRO*/
 .centro {
-    display: block;
+    display: flex;
     background-color: black;
     padding: 5px;
     margin: 5px auto;

@@ -5,12 +5,16 @@
 
     <script type="text/javascript">
 
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+
         function Salvar() {
 
             var _titulo = document.getElementById('<%= txtTitulo.ClientID %>').value;
             var _descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
 
-            if (_titulo === '' || _descricao === '') alert("Insira o título e descrição do artigo!");
+            if (_titulo === '' || _descricao === '') alert("Insira os dados corretamente!");
 
             else $.ajax({
                 method: 'POST',
