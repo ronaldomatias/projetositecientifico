@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Criar artigo" Language="C#" MasterPageFile="~/FrontEnd/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="CriarArtigo.aspx.cs" Inherits="sitecientifico.FrontEnd.CriarArtigo" %>
+﻿<%@ Page Title="Criar artigo" Language="C#" EnableEventValidation="false" MasterPageFile="~/FrontEnd/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="CriarArtigo.aspx.cs" Inherits="sitecientifico.FrontEnd.CriarArtigo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="plhScript" runat="server">
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloCriarArtigo.css" />
@@ -10,26 +10,28 @@
         }
 
         function Salvar() {
+            document.getElementById('<%= Master.FindControl("pnlInformacaoRetorno").ClientID %>').style.display = "none";
 
-            var _titulo = document.getElementById('<%= txtTitulo.ClientID %>').value;
-            var _descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
+            if (Page_ClientValidate()) {
 
-            if (_titulo === '' || _descricao === '') alert("Insira os dados corretamente!");
+                var _titulo = document.getElementById('<%= txtTitulo.ClientID %>').value;
+                var _descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
 
-            else $.ajax({
-                method: 'POST',
-                contentType: 'application/json',
-                url: 'CriarArtigo.aspx/NovoArtigo',
-                data: '{"txtTituloo": "' + _titulo + '", "txtDescricaoo": "' + _descricao + '"}',
-                dataType: 'json',
+                $.ajax({
+                    method: 'POST',
+                    contentType: 'application/json',
+                    url: 'CriarArtigo.aspx/NovoArtigo',
+                    data: '{"txtTituloo": "' + _titulo + '", "txtDescricaoo": "' + _descricao + '"}',
+                    dataType: 'json',
 
-                success: function () {
-                    alert("Salvo com sucesso!");
-                },
-                error: function (error) {
-                    alert(error.responseText);
-                }
-            });
+                    success: function () {
+                        alert("Salvo com sucesso!");
+                    },
+                    error: function (error) {
+                        alert(error.responseText);
+                    }
+                });
+            } 
         }
 
     </script>
@@ -45,7 +47,8 @@
                     <asp:Label CssClass="labelInfo" Width="20%" runat="server">Título</asp:Label>
                 </td>
                 <td style="width: 90%">
-                    <asp:TextBox ID="txtTitulo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTitulo" ValidationGroup="validacaoArtigo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtTitulo" ValidationGroup="artigo"  ErrorMessage="Preencha o título!" Display="None" runat="server"></asp:RequiredFieldValidator>
                 </td>
             </tr>
 
@@ -54,7 +57,8 @@
                     <asp:Label CssClass="labelInfo" runat="server">Descrição</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtDescricao" CssClass="textBoxInfo" Width="100%" Height="200px" TextMode="MultiLine" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDescricao" ValidationGroup="validacaoArtigo" CssClass="textBoxInfo" Width="100%" Height="200px" TextMode="MultiLine" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtDescricao" ValidationGroup="artigo" ErrorMessage="Preencha a descrição!" Display="None" runat="server"></asp:RequiredFieldValidator>
                 </td>
             </tr>
 

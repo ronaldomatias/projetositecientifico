@@ -12,7 +12,7 @@ body {
 /*CABEÇALHO*/
 .cabecalho {
     display: flex;
-    margin: 5px auto;
+    margin: 0px auto;
     padding: 5px;
     border-radius: 10px;
     max-width: 98%;
@@ -55,19 +55,18 @@ body {
     padding: 5px;
 }
 
-.divPlhInformacaoRetorno {
+/*INFORMACOES RETORNO*/
+.pnlInformacaoRetorno {
     display: flex;
     padding: 5px;
-    background-color: pink;
+    background-color: yellow;
     border-radius: 10px;
     justify-content: space-between;
     margin: 5px 0.6%;
     height: auto;
 }
 
-.lblInformacaoRetorno {
-    width: 98%;
-    word-wrap: break-word;
+.sumarioArtigos{
     margin: 0 auto;
 }
 

@@ -51,22 +51,31 @@ namespace sitecientifico.FrontEnd
         protected global::System.Web.UI.WebControls.Label lblLinhaDoTempo;
 
         /// <summary>
-        /// plhInformacaoRetorno control.
+        /// scpManager control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plhInformacaoRetorno;
+        protected global::System.Web.UI.ScriptManager scpManager;
 
         /// <summary>
-        /// lblInformacaoRetorno control.
+        /// pnlInformacaoRetorno control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblInformacaoRetorno;
+        protected global::System.Web.UI.UpdatePanel pnlInformacaoRetorno;
+
+        /// <summary>
+        /// sumarioArtigos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary sumarioArtigos;
 
         /// <summary>
         /// btnFecharInformacao control.

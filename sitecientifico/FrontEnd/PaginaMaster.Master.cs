@@ -15,7 +15,7 @@ namespace sitecientifico.FrontEnd
 
         public void FecharInfos(object sender, EventArgs e)
         {
-            plhInformacaoRetorno.Visible = false;
+            pnlInformacaoRetorno.Visible = false;
         }
 
        
