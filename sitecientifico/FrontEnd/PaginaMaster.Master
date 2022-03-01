@@ -24,16 +24,11 @@
             <asp:Label ID="lblLinhaDoTempo" ToolTip="Página onde você está navegando" CssClass="lblLinhaDoTempo" runat="server"></asp:Label>
         </asp:PlaceHolder>
 
-        <asp:ScriptManager ID="scpManager" runat="server"></asp:ScriptManager>
-        <asp:UpdatePanel ID="pnlInformacaoRetorno"  UpdateMode="Always" class="pnlInformacaoRetorno" runat="server">
-            <ContentTemplate>
-                <asp:ValidationSummary ID="sumarioArtigos" class="sumarioArtigos" runat="server" />
-                <asp:Button ID="btnFecharInformacao"  CssClass="btnFecharInformacao" Text="X" OnClick="FecharInfos" runat="server"></asp:Button>
-            </ContentTemplate>
-            <Triggers>
-                <asp:AsyncPostBackTrigger ControlID="btnFecharInformacao" />
-            </Triggers>
-        </asp:UpdatePanel>
+        <div class="divInformacaoRetorno">
+            <asp:PlaceHolder ID="plhInformacaoRetorno" runat="server">
+                <asp:ValidationSummary class="sumarioArtigos" runat="server" />
+            </asp:PlaceHolder>
+        </div>
 
         <div class="centro" runat="server">
             <asp:ContentPlaceHolder ID="plhConteudo" runat="server"></asp:ContentPlaceHolder>

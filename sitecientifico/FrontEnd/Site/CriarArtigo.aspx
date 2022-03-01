@@ -10,7 +10,6 @@
         }
 
         function Salvar() {
-            document.getElementById('<%= Master.FindControl("pnlInformacaoRetorno").ClientID %>').style.display = "none";
 
             if (Page_ClientValidate()) {
 
@@ -47,8 +46,8 @@
                     <asp:Label CssClass="labelInfo" Width="20%" runat="server">Título</asp:Label>
                 </td>
                 <td style="width: 90%">
-                    <asp:TextBox ID="txtTitulo" ValidationGroup="validacaoArtigo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ControlToValidate="txtTitulo" ValidationGroup="artigo"  ErrorMessage="Preencha o título!" Display="None" runat="server"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtTitulo" ValidationGroup="validacaoGrupo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtTitulo" ValidationGroup="validacaoGrupo"  ErrorMessage="Preencha o título!" Display="None" runat="server"></asp:RequiredFieldValidator>
                 </td>
             </tr>
 
@@ -57,8 +56,8 @@
                     <asp:Label CssClass="labelInfo" runat="server">Descrição</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtDescricao" ValidationGroup="validacaoArtigo" CssClass="textBoxInfo" Width="100%" Height="200px" TextMode="MultiLine" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ControlToValidate="txtDescricao" ValidationGroup="artigo" ErrorMessage="Preencha a descrição!" Display="None" runat="server"></asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtDescricao" ValidationGroup="validacaoGrupo" CssClass="textBoxInfo" Width="100%" Height="200px" TextMode="MultiLine" runat="server"></asp:TextBox>
+                    <asp:RequiredFieldValidator ControlToValidate="txtDescricao" ValidationGroup="validacaoGrupo" ErrorMessage="Preencha a descrição!" Display="None" runat="server"></asp:RequiredFieldValidator>
                 </td>
             </tr>
 

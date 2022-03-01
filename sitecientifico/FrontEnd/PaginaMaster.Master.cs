@@ -2,6 +2,7 @@
 using sitecientifico.BancoDados;
 using System;
 using System.Web.Services;
+using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace sitecientifico.FrontEnd
@@ -15,7 +16,6 @@ namespace sitecientifico.FrontEnd
 
         public void FecharInfos(object sender, EventArgs e)
         {
-            pnlInformacaoRetorno.Visible = false;
         }
 
        

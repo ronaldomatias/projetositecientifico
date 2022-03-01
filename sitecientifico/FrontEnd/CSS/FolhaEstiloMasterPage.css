@@ -56,31 +56,18 @@ body {
 }
 
 /*INFORMACOES RETORNO*/
-.pnlInformacaoRetorno {
+.divInformacaoRetorno {
     display: flex;
-    padding: 5px;
-    background-color: yellow;
+    background-color: lightpink;
     border-radius: 10px;
-    justify-content: space-between;
-    margin: 5px 0.6%;
-    height: auto;
-}
-
-.sumarioArtigos{
     margin: 0 auto;
+    width: 98.7%;
 }
-
-
-.btnFecharInformacao {
-    background-color: pink;
-    border: 0;
-    border-radius: 10px;
-    height: 2%;
+.sumarioArtigos {
+    margin: 0 12px;
+    padding: 5px;
+    color: darkred;
 }
-    .btnFecharInformacao:hover {
-        background-color: yellow;
-        color: black;
-    }
 
 
 /*CENTRO*/
@@ -88,7 +75,7 @@ body {
     display: flex;
     background-color: black;
     padding: 5px;
-    margin: 5px auto;
+    margin: 0 auto;
     border-radius: 10px;
     min-width: 320px;
     max-width: 98%;
