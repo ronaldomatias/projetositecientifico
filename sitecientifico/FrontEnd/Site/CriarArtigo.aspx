@@ -4,20 +4,16 @@
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloCriarArtigo.css" />
 
     <script type="text/javascript">
-
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
 
-        function Salvar() {
+        function SalvarArtigo() {
 
             if (Page_ClientValidate()) {
 
-                document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "none";
-
                 var _titulo = document.getElementById('<%= txtTitulo.ClientID %>').value;
                 var _descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
-
                 $.ajax({
                     method: 'POST',
                     contentType: 'application/json',
@@ -26,9 +22,9 @@
                     dataType: 'json',
 
                     success: function () {
-                        document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "flow";
                         document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').style.display = "flow";
                         document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').textContent = "Artigo publicado!";
+                        document.getElementById('<%= Master.FindControl("btnEsconderBarraInformacao").ClientID %>').style.display = "flow";
                     },
                     error: function (error) {
                         alert(error.responseText);
@@ -36,11 +32,10 @@
                 });
             }
             else {
-                document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "flow";
-                document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').textContent = "";
+                document.getElementById('<%= Master.FindControl("btnEsconderBarraInformacao").ClientID %>').style.display = "flow";
+                document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').style.display = "none";
             }
         }
-
     </script>
 </asp:Content>
 
@@ -55,7 +50,7 @@
                 </td>
                 <td style="width: 90%">
                     <asp:TextBox ID="txtTitulo" AutoPostBack="false" ValidationGroup="validacaoGrupo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
-                    <asp:RequiredFieldValidator ControlToValidate="txtTitulo" ValidationGroup="validacaoGrupo"  ErrorMessage="Preencha o título!" Display="None" runat="server"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ControlToValidate="txtTitulo" ValidationGroup="validacaoGrupo" ErrorMessage="Preencha o título!" Display="None" runat="server"></asp:RequiredFieldValidator>
                 </td>
             </tr>
 
@@ -72,11 +67,10 @@
             <tr>
                 <td></td>
                 <td>
-                    <asp:Button ID="botao" class="botaoFormulario" Text="Cadastrar" OnClientClick="Salvar(); return false;" runat="server" />
+                    <asp:Button ID="botao" class="botaoFormulario" Text="Cadastrar" OnClientClick="SalvarArtigo(); return false;" runat="server" />
                 </td>
             </tr>
         </table>
     </div>
 
 </asp:Content>
-

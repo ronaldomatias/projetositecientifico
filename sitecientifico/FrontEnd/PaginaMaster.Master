@@ -10,8 +10,8 @@
 
     <script type="text/javascript">
 
-        function EsconderPlaceHolderInformacao() {
-            document.getElementById('<%= btnFecharInformacao.ClientID %>').style.display = "none";
+        function EsconderBarraInformacao() {
+            document.getElementById('<%= btnEsconderBarraInformacao.ClientID %>').style.display = "none";
             document.getElementById('<%= vsInformacaoRetorno.ClientID %>').style.display = "none";
             document.getElementById('<%= lblInformacaoRetorno.ClientID %>').style.display = "none";
         }
@@ -27,6 +27,7 @@
                 <asp:Button class="botaoCabecalho" Text="Novo artigo" PostBackUrl="~/FrontEnd/Site/CriarArtigo.aspx" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Astronomia" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Ler Artigos" PostBackUrl="~/FrontEnd/Site/VisualizarArtigos.aspx" runat="server" />
+                <asp:Button class="botaoCabecalho" Text="Fórum" runat="server" />
             </div>
         </div>
 
@@ -34,19 +35,18 @@
             <asp:Label ID="lblLinhaDoTempo" ToolTip="Página onde você está navegando" CssClass="lblLinhaDoTempo" runat="server"></asp:Label>
         </asp:PlaceHolder>
 
-        <div class="divInformacaoRetorno">
-            <asp:PlaceHolder ID="plhInformacaoRetorno" runat="server">
-                <asp:ValidationSummary ID="vsInformacaoRetorno" DisplayMode="List" CssClass="sumarioArtigos" runat="server" />
-                <asp:Label ID="lblInformacaoRetorno" CssClass="lblInformacaoRetorno" runat="server"></asp:Label>
-                <asp:Button ID="btnFecharInformacao" Text="X" CssClass="btnFecharInformacao" OnClientClick="EsconderPlaceHolderInformacao(); return false;" runat="server" />
-            </asp:PlaceHolder>
-        </div>
-
         <div class="centro" runat="server">
+            <div class="divInformacaoRetorno">
+                <asp:PlaceHolder ID="plhInformacaoRetorno" runat="server">
+                    <asp:ValidationSummary ID="vsInformacaoRetorno" HeaderText="Erros:" DisplayMode="BulletList" CssClass="sumarioArtigos" runat="server" />
+                    <asp:Label ID="lblInformacaoRetorno" CssClass="lblInformacaoRetorno" runat="server"></asp:Label>
+                    <asp:Button ID="btnEsconderBarraInformacao" Text="X" CssClass="btnEsconderBarraInformacao" OnClientClick="EsconderBarraInformacao(); return false;" runat="server" />
+                </asp:PlaceHolder>
+            </div>
+
             <asp:ContentPlaceHolder ID="plhConteudo" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>
 </body>
 
 </html>
-

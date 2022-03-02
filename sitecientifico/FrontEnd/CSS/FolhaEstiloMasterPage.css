@@ -25,10 +25,11 @@ body {
 .botoesMenu {
     display: flex;
     padding: 3px;
+    margin-right: 8%;
 }
 
 .botaoCabecalho {
-    Font-Size: 20px;
+    Font-Size: 23px;
     background-color: green;
     border-radius: 3px;
     font-family: 'Rockwell Condensed';
@@ -63,7 +64,10 @@ body {
     margin: 0 auto;
     width: 98.7%;
     justify-content: space-between;
+    font-family: 'Berlin Sans FB''Agency FB';
+    font-weight: bold;
 }
+
 .sumarioArtigos {
     margin: 0 12px;
     padding: 5px;
@@ -77,7 +81,7 @@ body {
     margin: 0 12px;
 }
 
-.btnFecharInformacao {
+.btnEsconderBarraInformacao {
     background-color: yellow;
     border: 0;
     border-radius: 10px;
@@ -85,7 +89,8 @@ body {
     margin-right: 5px;
     display: none;
 }
-    .btnFecharInformacao:hover {
+
+    .btnEsconderBarraInformacao:hover {
         background-color: pink;
         color: black;
     }
@@ -93,7 +98,6 @@ body {
 
 /*CENTRO*/
 .centro {
-    display: flex;
     background-color: black;
     padding: 5px;
     margin: 0 auto;
@@ -102,7 +106,3 @@ body {
     max-width: 98%;
     min-height: 400px;
 }
-
-
-
-
