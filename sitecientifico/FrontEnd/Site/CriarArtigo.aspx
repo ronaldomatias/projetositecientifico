@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Criar artigo" Language="C#" EnableEventValidation="false" MasterPageFile="~/FrontEnd/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="CriarArtigo.aspx.cs" Inherits="sitecientifico.FrontEnd.CriarArtigo" %>
+﻿<%@ Page Title="Criar artigo" Language="C#" MasterPageFile="~/FrontEnd/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="CriarArtigo.aspx.cs" Inherits="sitecientifico.FrontEnd.CriarArtigo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="plhScript" runat="server">
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloCriarArtigo.css" />
@@ -10,6 +10,8 @@
         }
 
         function Salvar() {
+
+            document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "none";
 
             if (Page_ClientValidate()) {
 
@@ -30,7 +32,11 @@
                         alert(error.responseText);
                     }
                 });
-            } 
+
+                
+            } else {
+                document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "flow";
+            }
         }
 
     </script>

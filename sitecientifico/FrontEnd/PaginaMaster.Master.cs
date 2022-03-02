@@ -14,10 +14,6 @@ namespace sitecientifico.FrontEnd
         {
         }
 
-        public void FecharInfos(object sender, EventArgs e)
-        {
-        }
-
        
     }
 

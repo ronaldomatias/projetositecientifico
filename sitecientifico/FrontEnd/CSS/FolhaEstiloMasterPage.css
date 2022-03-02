@@ -62,12 +62,26 @@ body {
     border-radius: 10px;
     margin: 0 auto;
     width: 98.7%;
+    justify-content: space-between;
 }
 .sumarioArtigos {
     margin: 0 12px;
     padding: 5px;
     color: darkred;
 }
+
+.btnFecharInformacao {
+    background-color: pink;
+    border: 0;
+    border-radius: 10px;
+    height: 2%;
+    margin-right: 5px;
+    display: none;
+}
+    .btnFecharInformacao:hover {
+        background-color: yellow;
+        color: black;
+    }
 
 
 /*CENTRO*/

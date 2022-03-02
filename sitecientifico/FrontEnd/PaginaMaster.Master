@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloMasterPage.css" />
     <script src="../../Scripts/jquery-3.6.0.min.js"></script>
 
+    <script type="text/javascript">
+
+        function ApagarBotaoFecharInformacao() {
+            document.getElementById('<%= plhInformacaoRetorno.ClientID %>').style.display = "none";
+        }
+
+    </script>
+
     <asp:ContentPlaceHolder ID="plhScript" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
@@ -26,7 +34,8 @@
 
         <div class="divInformacaoRetorno">
             <asp:PlaceHolder ID="plhInformacaoRetorno" runat="server">
-                <asp:ValidationSummary class="sumarioArtigos" runat="server" />
+                <asp:ValidationSummary Cssclass="sumarioArtigos" runat="server" />
+                <asp:Button ID="btnFecharInformacao" Text="X" CssClass="btnFecharInformacao" OnClientClick="ApagarBotaoFecharInformacao(); return false;" runat="server"/>
             </asp:PlaceHolder>
         </div>
 
