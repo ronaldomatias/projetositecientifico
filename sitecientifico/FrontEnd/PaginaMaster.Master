@@ -10,8 +10,10 @@
 
     <script type="text/javascript">
 
-        function ApagarBotaoFecharInformacao() {
-            document.getElementById('<%= plhInformacaoRetorno.ClientID %>').style.display = "none";
+        function EsconderPlaceHolderInformacao() {
+            document.getElementById('<%= btnFecharInformacao.ClientID %>').style.display = "none";
+            document.getElementById('<%= vsInformacaoRetorno.ClientID %>').style.display = "none";
+            document.getElementById('<%= lblInformacaoRetorno.ClientID %>').style.display = "none";
         }
 
     </script>
@@ -34,8 +36,9 @@
 
         <div class="divInformacaoRetorno">
             <asp:PlaceHolder ID="plhInformacaoRetorno" runat="server">
-                <asp:ValidationSummary Cssclass="sumarioArtigos" runat="server" />
-                <asp:Button ID="btnFecharInformacao" Text="X" CssClass="btnFecharInformacao" OnClientClick="ApagarBotaoFecharInformacao(); return false;" runat="server"/>
+                <asp:ValidationSummary ID="vsInformacaoRetorno" DisplayMode="List" CssClass="sumarioArtigos" runat="server" />
+                <asp:Label ID="lblInformacaoRetorno" CssClass="lblInformacaoRetorno" runat="server"></asp:Label>
+                <asp:Button ID="btnFecharInformacao" Text="X" CssClass="btnFecharInformacao" OnClientClick="EsconderPlaceHolderInformacao(); return false;" runat="server" />
             </asp:PlaceHolder>
         </div>
 

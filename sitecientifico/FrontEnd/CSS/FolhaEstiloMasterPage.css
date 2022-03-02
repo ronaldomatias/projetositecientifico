@@ -58,7 +58,7 @@ body {
 /*INFORMACOES RETORNO*/
 .divInformacaoRetorno {
     display: flex;
-    background-color: lightpink;
+    background-color: yellow;
     border-radius: 10px;
     margin: 0 auto;
     width: 98.7%;
@@ -70,8 +70,15 @@ body {
     color: darkred;
 }
 
+.lblInformacaoRetorno {
+    display: none;
+    padding: 5px;
+    color: green;
+    margin: 0 12px;
+}
+
 .btnFecharInformacao {
-    background-color: pink;
+    background-color: yellow;
     border: 0;
     border-radius: 10px;
     height: 2%;
@@ -79,7 +86,7 @@ body {
     display: none;
 }
     .btnFecharInformacao:hover {
-        background-color: yellow;
+        background-color: pink;
         color: black;
     }
 

@@ -11,9 +11,9 @@
 
         function Salvar() {
 
-            document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "none";
-
             if (Page_ClientValidate()) {
+
+                document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "none";
 
                 var _titulo = document.getElementById('<%= txtTitulo.ClientID %>').value;
                 var _descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
@@ -26,16 +26,18 @@
                     dataType: 'json',
 
                     success: function () {
-                        alert("Salvo com sucesso!");
+                        document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "flow";
+                        document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').style.display = "flow";
+                        document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').textContent = "Artigo publicado!";
                     },
                     error: function (error) {
                         alert(error.responseText);
                     }
                 });
-
-                
-            } else {
+            }
+            else {
                 document.getElementById('<%= Master.FindControl("btnFecharInformacao").ClientID %>').style.display = "flow";
+                document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').textContent = "";
             }
         }
 
@@ -52,7 +54,7 @@
                     <asp:Label CssClass="labelInfo" Width="20%" runat="server">Título</asp:Label>
                 </td>
                 <td style="width: 90%">
-                    <asp:TextBox ID="txtTitulo" ValidationGroup="validacaoGrupo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTitulo" AutoPostBack="false" ValidationGroup="validacaoGrupo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ControlToValidate="txtTitulo" ValidationGroup="validacaoGrupo"  ErrorMessage="Preencha o título!" Display="None" runat="server"></asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -62,7 +64,7 @@
                     <asp:Label CssClass="labelInfo" runat="server">Descrição</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtDescricao" ValidationGroup="validacaoGrupo" CssClass="textBoxInfo" Width="100%" Height="200px" TextMode="MultiLine" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDescricao" AutoPostBack="false" ValidationGroup="validacaoGrupo" CssClass="textBoxInfo" Width="100%" Height="200px" TextMode="MultiLine" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ControlToValidate="txtDescricao" ValidationGroup="validacaoGrupo" ErrorMessage="Preencha a descrição!" Display="None" runat="server"></asp:RequiredFieldValidator>
                 </td>
             </tr>
