@@ -10,11 +10,13 @@ namespace sitecientifico.BackEnd.Classes
         public int nCdArtigo { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
+        public DateTime dtCriacao { get; set; }
 
-        public Artigo(string titulo, string descricao)
+        public Artigo(string titulo, string descricao, DateTime dataCriacao)
         {
             Titulo = titulo;
             Descricao = descricao;
+            dtCriacao = dataCriacao;
         }
         public Artigo()
         {

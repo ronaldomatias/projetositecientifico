@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloCriarArtigo.css" />
 
     <script type="text/javascript">
+
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
@@ -14,11 +15,12 @@
 
                 var _titulo = document.getElementById('<%= txtTitulo.ClientID %>').value;
                 var _descricao = document.getElementById('<%= txtDescricao.ClientID %>').value;
+
                 $.ajax({
                     method: 'POST',
                     contentType: 'application/json',
                     url: 'CriarArtigo.aspx/NovoArtigo',
-                    data: '{"txtTituloo": "' + _titulo + '", "txtDescricaoo": "' + _descricao + '"}',
+                    data: '{"txtTitulo": "' + _titulo + '", "txtDescricao": "' + _descricao + '"}',
                     dataType: 'json',
 
                     success: function () {
@@ -49,8 +51,9 @@
                     <asp:Label CssClass="labelInfo" Width="20%" runat="server">Título</asp:Label>
                 </td>
                 <td style="width: 90%">
-                    <asp:TextBox ID="txtTitulo" AutoPostBack="false" ValidationGroup="validacaoGrupo" TextMode="SingleLine" CssClass="textBoxInfo" Width="100%" Height="25px" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTitulo" MaxLength="300" ValidationGroup="validacaoGrupo" TextMode="MultiLine" CssClass="txtTitulo" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ControlToValidate="txtTitulo" ValidationGroup="validacaoGrupo" ErrorMessage="Preencha o título!" Display="None" runat="server"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ControlToValidate="txtTitulo" ValidationGroup="" ValidationExpression=".{1,300}" ErrorMessage="O campo título permite no máximo 300 caracteres!" Display="None" runat="server"></asp:RegularExpressionValidator>
                 </td>
             </tr>
 
@@ -59,7 +62,7 @@
                     <asp:Label CssClass="labelInfo" runat="server">Descrição</asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtDescricao" AutoPostBack="false" ValidationGroup="validacaoGrupo" CssClass="textBoxInfo" Width="100%" Height="200px" TextMode="MultiLine" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDescricao" AutoPostBack="false" ValidationGroup="validacaoGrupo" CssClass="txtDescricao" TextMode="MultiLine" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ControlToValidate="txtDescricao" ValidationGroup="validacaoGrupo" ErrorMessage="Preencha a descrição!" Display="None" runat="server"></asp:RequiredFieldValidator>
                 </td>
             </tr>
