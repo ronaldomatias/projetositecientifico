@@ -15,11 +15,10 @@ namespace sitecientifico.FrontEnd
             lblLinhaDoTempo.Text = "~/criarArtigo";
         }
 
-
         [WebMethod]
-        public static void NovoArtigo(string txtTituloo, string txtDescricaoo)
+        public static void NovoArtigo(string txtTitulo, string txtDescricao)
         {
-            Artigo artigo = new Artigo(txtTituloo, txtDescricaoo);
+            Artigo artigo = new Artigo(txtTitulo, txtDescricao, DateTime.Now);
 
             ArtigoDAO artigoDAO = new ArtigoDAO();
             artigoDAO.NovoArtigo(artigo);

@@ -12,7 +12,10 @@ namespace sitecientifico.FrontEnd.Site
     public partial class VisualizarArtigos : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {   
+        {
+
+            Label lblLinhaDoTempo = (Label)Master.FindControl("lblLinhaDoTempo");
+            lblLinhaDoTempo.Text = "~/visualizarArtigos";
 
             // MONTAGEM DA ÁREA DE VISUALIZAÇÃO DOS ARTIGOS;
             List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigos();

@@ -17,7 +17,7 @@ namespace sitecientifico.BancoDados
 
             using (NpgsqlConnection con = Conexao.ObterConexao())
             {
-                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao FROM artigo", con);
+                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao, dtCriacao FROM artigo", con);
 
                 con.Open();
                 NpgsqlDataReader dataReader = sqlComando.ExecuteReader();
@@ -26,7 +26,7 @@ namespace sitecientifico.BancoDados
                 {
                     while (dataReader.Read())
                     {
-                        lista.Add(new Artigo(dataReader.GetString(0), dataReader.GetString(1)));
+                        lista.Add(new Artigo(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2)));
                     }
                     dataReader.NextResult();
                 }
@@ -40,9 +40,11 @@ namespace sitecientifico.BancoDados
         {
             using (NpgsqlConnection con = Conexao.ObterConexao())
             {
-                NpgsqlCommand sqlComando = new NpgsqlCommand("INSERT INTO artigo VALUES(default, @titulo, @descricao)", con);
-                sqlComando.Parameters.AddWithValue("titulo", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Titulo;
+                NpgsqlCommand sqlComando = new NpgsqlCommand("INSERT INTO artigo VALUES(default, @titulo, @descricao, @dtCriacao)", con);
+                sqlComando.Parameters.AddWithValue("titulo", NpgsqlTypes.NpgsqlDbType.Integer).Value = artigo.Titulo;
                 sqlComando.Parameters.AddWithValue("descricao", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Descricao;
+                sqlComando.Parameters.AddWithValue("dtCriacao", NpgsqlTypes.NpgsqlDbType.Date).Value = artigo.dtCriacao;
+
                 sqlComando.CommandType = System.Data.CommandType.Text;
 
                 con.Open();
