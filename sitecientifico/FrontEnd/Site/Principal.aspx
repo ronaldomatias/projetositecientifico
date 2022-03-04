@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Título" Language="C#" MasterPageFile="~/FrontEnd/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="sitecientifico.FrontEnd.Principal" %>
+﻿<%@ Page Title="Título" Language="C#" MasterPageFile="~/FrontEnd/Site/PaginasMaster/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="Principal.aspx.cs" Inherits="sitecientifico.FrontEnd.Principal" %>
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="plhScript" runat="server">

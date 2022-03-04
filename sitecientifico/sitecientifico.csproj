@@ -135,11 +135,11 @@
     <Compile Include="FrontEnd\Site\CriarArtigo.aspx.designer.cs">
       <DependentUpon>CriarArtigo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FrontEnd\PaginaMaster.Master.cs">
+    <Compile Include="FrontEnd\Site\PaginasMaster\PaginaMaster.Master.cs">
       <DependentUpon>PaginaMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FrontEnd\PaginaMaster.Master.designer.cs">
+    <Compile Include="FrontEnd\Site\PaginasMaster\PaginaMaster.Master.designer.cs">
       <DependentUpon>PaginaMaster.Master</DependentUpon>
     </Compile>
     <Compile Include="FrontEnd\Site\Principal.aspx.cs">
@@ -159,7 +159,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FrontEnd\PaginaMaster.Master" />
+    <Content Include="FrontEnd\Site\PaginasMaster\PaginaMaster.Master" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />

@@ -13,14 +13,10 @@ namespace sitecientifico.FrontEnd.Site
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            Label lblLinhaDoTempo = (Label)Master.FindControl("lblLinhaDoTempo");
-            lblLinhaDoTempo.Text = "~/visualizarArtigos";
-
             // MONTAGEM DA ÁREA DE VISUALIZAÇÃO DOS ARTIGOS;
             List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigos();
-            
-            foreach(Artigo artigo in listaArtigos)
+
+            foreach (Artigo artigo in listaArtigos)
             {
                 Panel painelLabels = new Panel();
                 painelLabels.CssClass = "painelLabels";

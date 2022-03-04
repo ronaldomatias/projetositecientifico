@@ -22,7 +22,7 @@
 </head>
 <body>
     <form id="form1" method="post" runat="server">
-        <div class="cabecalho">
+        <div class="divCabecalho">
             <div class="botoesMenu" runat="server">
                 <asp:Button class="botaoCabecalho" Text="Novo artigo" PostBackUrl="~/FrontEnd/Site/CriarArtigo.aspx" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Astronomia" runat="server" />
@@ -35,15 +35,15 @@
             <asp:Label ID="lblLinhaDoTempo" ToolTip="Página onde você está navegando" CssClass="lblLinhaDoTempo" runat="server"></asp:Label>
         </asp:PlaceHolder>
 
-        <div class="centro" runat="server">
-            <div class="divInformacaoRetorno">
-                <asp:PlaceHolder ID="plhInformacaoRetorno" runat="server">
-                    <asp:ValidationSummary ID="vsInformacaoRetorno" HeaderText="Erros:" DisplayMode="BulletList" CssClass="sumarioArtigos" runat="server" />
-                    <asp:Label ID="lblInformacaoRetorno" CssClass="lblInformacaoRetorno" runat="server"></asp:Label>
-                    <asp:Button ID="btnEsconderBarraInformacao" Text="X" CssClass="btnEsconderBarraInformacao" OnClientClick="EsconderBarraInformacao(); return false;" runat="server" />
-                </asp:PlaceHolder>
-            </div>
+        <div class="divInformacaoRetorno">
+            <asp:PlaceHolder ID="plhInformacaoRetorno" runat="server">
+                <asp:ValidationSummary ID="vsInformacaoRetorno" HeaderText="Erros:" DisplayMode="BulletList" CssClass="sumarioArtigos" runat="server" />
+                <asp:Label ID="lblInformacaoRetorno" CssClass="lblInformacaoRetorno" runat="server"></asp:Label>
+                <asp:Button ID="btnEsconderBarraInformacao" Text="X" CssClass="btnEsconderBarraInformacao" OnClientClick="EsconderBarraInformacao(); return false;" runat="server" />
+            </asp:PlaceHolder>
+        </div>
 
+        <div class="centro" runat="server">
             <asp:ContentPlaceHolder ID="plhConteudo" runat="server"></asp:ContentPlaceHolder>
         </div>
     </form>

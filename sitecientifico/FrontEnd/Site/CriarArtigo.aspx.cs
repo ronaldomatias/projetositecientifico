@@ -11,8 +11,6 @@ namespace sitecientifico.FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label lblLinhaDoTempo = (Label)Master.FindControl("lblLinhaDoTempo");
-            lblLinhaDoTempo.Text = "~/criarArtigo";
         }
 
         [WebMethod]

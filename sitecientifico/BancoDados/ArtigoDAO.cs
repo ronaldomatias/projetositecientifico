@@ -17,7 +17,7 @@ namespace sitecientifico.BancoDados
 
             using (NpgsqlConnection con = Conexao.ObterConexao())
             {
-                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao, dtCriacao FROM artigo", con);
+                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao, dtCriacao FROM artigo ORDER BY dtCriacao DESC", con);
 
                 con.Open();
                 NpgsqlDataReader dataReader = sqlComando.ExecuteReader();
@@ -41,7 +41,7 @@ namespace sitecientifico.BancoDados
             using (NpgsqlConnection con = Conexao.ObterConexao())
             {
                 NpgsqlCommand sqlComando = new NpgsqlCommand("INSERT INTO artigo VALUES(default, @titulo, @descricao, @dtCriacao)", con);
-                sqlComando.Parameters.AddWithValue("titulo", NpgsqlTypes.NpgsqlDbType.Integer).Value = artigo.Titulo;
+                sqlComando.Parameters.AddWithValue("titulo", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Titulo;
                 sqlComando.Parameters.AddWithValue("descricao", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Descricao;
                 sqlComando.Parameters.AddWithValue("dtCriacao", NpgsqlTypes.NpgsqlDbType.Date).Value = artigo.dtCriacao;
 

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Criar artigo" Language="C#" MasterPageFile="~/FrontEnd/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="CriarArtigo.aspx.cs" Inherits="sitecientifico.FrontEnd.CriarArtigo" %>
+﻿<%@ Page Title="Criar artigo" Language="C#" MasterPageFile="~/FrontEnd/Site/PaginasMaster/PaginaMaster.Master" AutoEventWireup="true" CodeBehind="CriarArtigo.aspx.cs" Inherits="sitecientifico.FrontEnd.CriarArtigo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="plhScript" runat="server">
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloCriarArtigo.css" />
@@ -25,7 +25,7 @@
 
                     success: function () {
                         document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').style.display = "flow";
-                        document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').textContent = "Artigo publicado!";
+                        document.getElementById('<%= Master.FindControl("lblInformacaoRetorno").ClientID %>').textContent = "• Artigo publicado!";
                         document.getElementById('<%= Master.FindControl("btnEsconderBarraInformacao").ClientID %>').style.display = "flow";
                     },
                     error: function (error) {
@@ -48,12 +48,11 @@
         <table style="width: 97%; margin: 5px;">
             <tr>
                 <td style="width: 10%">
-                    <asp:Label CssClass="labelInfo" Width="20%" runat="server">Título</asp:Label>
+                    <asp:Label CssClass="labelInfo" ToolTip="É permitido no máximo 200 caracteres para o título!" runat="server">Título</asp:Label>
                 </td>
                 <td style="width: 90%">
-                    <asp:TextBox ID="txtTitulo" MaxLength="300" ValidationGroup="validacaoGrupo" TextMode="MultiLine" CssClass="txtTitulo" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTitulo" MaxLength="200" ValidationGroup="validacaoGrupo" TextMode="MultiLine" CssClass="txtTitulo" runat="server"></asp:TextBox>
                     <asp:RequiredFieldValidator ControlToValidate="txtTitulo" ValidationGroup="validacaoGrupo" ErrorMessage="Preencha o título!" Display="None" runat="server"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ControlToValidate="txtTitulo" ValidationGroup="" ValidationExpression=".{1,300}" ErrorMessage="O campo título permite no máximo 300 caracteres!" Display="None" runat="server"></asp:RegularExpressionValidator>
                 </td>
             </tr>
 

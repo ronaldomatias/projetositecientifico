@@ -1,18 +1,17 @@
 ﻿.divConteudo {
-    background-color: darkslategray;
+    background-color: darkslateblue;
     text-align: center;
     width: 50%;
     margin: 10px auto;
-    border-radius: 10px;
-    border: groove;
-    border-color: green;
+    margin: 10px auto;
+    border: 2px groove;
+    border-radius: 5px;
 }
 
 
 .divPlaceHolder {
     display: inline-block;
     margin: 10px auto;
-    background-color: green;
     width: 90%;
     height: auto;
     border-radius: 5px;
@@ -40,12 +39,11 @@
 
 .painelLabels {
     background-color: black;
-    border-style: solid;
-    border-color: green;
+    padding: 15px;
 }
 
 
 .painelEspacador {
-    background-color: darkslategray;
+    background-color: darkslateblue;
     height: 25px;
 }
