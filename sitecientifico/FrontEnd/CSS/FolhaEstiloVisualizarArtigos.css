@@ -17,7 +17,7 @@
     border-radius: 5px;
 }
 
-.labelTitulo {
+.lblTitulo {
     display: flow;
     color: white;
     word-wrap: break-word;
@@ -26,7 +26,7 @@
     margin-bottom: 20px;
 }
 
-.labelDescricao {
+.lblDescricao {
     display: inline-block;
     color: white;
     word-wrap: break-word;
@@ -37,13 +37,24 @@
     margin: 10px;
 }
 
-.painelLabels {
-    background-color: black;
-    padding: 15px;
+.lblDtCriacao {
+    color: yellow;
 }
 
+
+.painelLabels {
+    background-color: black;
+    padding: 10px;
+}
+
+
+.painelDtCriacao {
+    text-align: right;
+    font-size: 15px;
+}
 
 .painelEspacador {
     background-color: darkslateblue;
     height: 25px;
 }
+

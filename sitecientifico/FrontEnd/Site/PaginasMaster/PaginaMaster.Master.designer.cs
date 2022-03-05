@@ -33,24 +33,6 @@ namespace sitecientifico.FrontEnd
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// plhLinhaDoTempo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder plhLinhaDoTempo;
-
-        /// <summary>
-        /// lblLinhaDoTempo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblLinhaDoTempo;
-
-        /// <summary>
         /// plhInformacaoRetorno control.
         /// </summary>
         /// <remarks>

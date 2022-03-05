@@ -30,10 +30,7 @@
                 <asp:Button class="botaoCabecalho" Text="Fórum" runat="server" />
             </div>
         </div>
-
-        <asp:PlaceHolder ID="plhLinhaDoTempo" runat="server">
-            <asp:Label ID="lblLinhaDoTempo" ToolTip="Página onde você está navegando" CssClass="lblLinhaDoTempo" runat="server"></asp:Label>
-        </asp:PlaceHolder>
+        <div class="divLinhaDivisoria"></div>
 
         <div class="divInformacaoRetorno">
             <asp:PlaceHolder ID="plhInformacaoRetorno" runat="server">

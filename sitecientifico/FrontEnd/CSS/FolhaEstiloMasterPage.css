@@ -42,16 +42,23 @@ body {
         opacity: 0.5;
     }
 
+.divLinhaDivisoria {
+    border: 1.5px dashed;
+    border-color: aqua;
+}
+
 
 /*INFORMACOES RETORNO*/
 .divInformacaoRetorno {
     display: flex;
     background-color: yellow;
-    margin: 0.1% auto;
-    width: 99%;
+    margin: 0.2% auto;
+    margin-bottom: 0;
+    width: 98%;
     justify-content: space-between;
     font-family: 'Berlin Sans FB''Agency FB';
     font-weight: bold;
+    border-radius: 2px;    
 }
 
 .sumarioArtigos {
