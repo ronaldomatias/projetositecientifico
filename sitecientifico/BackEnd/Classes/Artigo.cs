@@ -18,6 +18,10 @@ namespace sitecientifico.BackEnd.Classes
             Descricao = descricao;
             dtCriacao = dataCriacao;
         }
+        public Artigo(string titulo)
+        {
+            Titulo = titulo;
+        }
         public Artigo()
         {
         }

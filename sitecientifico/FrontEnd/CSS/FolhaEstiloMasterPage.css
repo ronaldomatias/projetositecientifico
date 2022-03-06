@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: forestgreen;
+    background-color: green;
 }
 
 
@@ -20,6 +20,8 @@ body {
     align-items: end;
     justify-content: end;
     background-image: url("/Imagens/Banner2.jpg");
+    border-bottom: 1.5px dashed;
+    border-color: blue;
 }
 
 .botoesMenu {
@@ -42,23 +44,18 @@ body {
         opacity: 0.5;
     }
 
-.divLinhaDivisoria {
-    border: 1.5px dashed;
-    border-color: aqua;
-}
-
 
 /*INFORMACOES RETORNO*/
 .divInformacaoRetorno {
     display: flex;
-    background-color: yellow;
+    background-color: gold;
     margin: 0.2% auto;
     margin-bottom: 0;
     width: 98%;
     justify-content: space-between;
-    font-family: 'Berlin Sans FB''Agency FB';
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
-    border-radius: 2px;    
+    border-radius: 2px;
 }
 
 .sumarioArtigos {

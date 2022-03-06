@@ -53,6 +53,31 @@ namespace sitecientifico.BancoDados
             }
         }
 
+        public List<Artigo> ProcurarArtigosPorTitulo(Artigo artigo)
+        {
+            List<Artigo> lista = new List<Artigo>();
+
+            using (NpgsqlConnection con = Conexao.ObterConexao())
+            {
+                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao, dtCriacao FROM artigo WHERE titulo || descricao ILIKE '%" + artigo.Titulo + "%'", con);
+
+                con.Open();
+                NpgsqlDataReader dataReader = sqlComando.ExecuteReader();
+
+                while (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        lista.Add(new Artigo(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2)));
+                    }
+                    dataReader.NextResult();
+                }
+                con.Close();
+            }
+
+            return lista;
+        }
+
 
     }
 }

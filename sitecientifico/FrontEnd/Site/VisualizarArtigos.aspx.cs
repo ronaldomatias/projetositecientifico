@@ -13,9 +13,24 @@ namespace sitecientifico.FrontEnd.Site
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // MONTAGEM DA ÁREA DE VISUALIZAÇÃO DOS ARTIGOS;
-            List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigos();
+            if (!IsPostBack)
+            {
+                // MONTAGEM DA ÁREA DE VISUALIZAÇÃO DOS ARTIGOS;
+                List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigos();
+                MontarArtigos(listaArtigos);
+            }
+        }
 
+        public void PesquisarArtigoPorTitulo(object sender, EventArgs e)
+        {
+            Artigo artigo = new Artigo(txtPesquisaArtigo.Text);
+
+            List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigosPorTitulo(artigo);
+            MontarArtigos(listaArtigos);
+        }
+
+        public void MontarArtigos(List<Artigo> listaArtigos)
+        {
             foreach (Artigo artigo in listaArtigos)
             {
                 Panel painelLabels = new Panel();
@@ -48,7 +63,6 @@ namespace sitecientifico.FrontEnd.Site
                 placeHolder.Controls.Add(painelLabels);
                 placeHolder.Controls.Add(painelEspacador);
             }
-
         }
     }
 }

@@ -13,11 +13,14 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="plhConteudo" runat="server">
 
-    <div class="divConteudo">
+    <div class="divPesquisaArtigo">
+        <asp:TextBox ID="txtPesquisaArtigo" CssClass="txtPesquisaArtigo" runat="server"></asp:TextBox>
+        <asp:Button ID="btnPesquisarArtigo" CssClass="btnPesquisarArtigo" Text="PESQUISAR" OnClick="PesquisarArtigoPorTitulo" runat="server" />
+    </div>
 
+    <div class="divConteudo">
         <div class="divPlaceHolder">
             <asp:PlaceHolder ID="placeHolder" runat="server"></asp:PlaceHolder>
         </div>
-
     </div>
 </asp:Content>
