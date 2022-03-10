@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: green;
+    background-color: darkslategray;
 }
 
 
@@ -35,6 +35,7 @@ body {
     background-color: green;
     border-radius: 3px;
     font-family: 'Rockwell Condensed';
+    padding: 1px;
     margin: 3px;
     border: 0px;
 }
@@ -89,8 +90,8 @@ body {
 /*CENTRO*/
 .centro {
     background-color: black;
-    padding: 5px;
     margin: 0 auto;
     min-width: 320px;
     max-width: 100%;
+    min-height: 500px;
 }

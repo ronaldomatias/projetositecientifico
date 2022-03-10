@@ -118,6 +118,7 @@
     <Content Include="FrontEnd\Site\VisualizarArtigos.aspx" />
     <Content Include="Imagens\Banner2.jpg" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Imagens\Lupa-Verde-PNG.png" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -126,7 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BackEnd\Classes\Artigo.cs" />
+    <Compile Include="BackEnd\Classes\Categoria.cs" />
     <Compile Include="BancoDados\ArtigoDAO.cs" />
+    <Compile Include="BancoDados\CategoriaDAO.cs" />
     <Compile Include="BancoDados\Conexao.cs" />
     <Compile Include="FrontEnd\Site\CriarArtigo.aspx.cs">
       <DependentUpon>CriarArtigo.aspx</DependentUpon>

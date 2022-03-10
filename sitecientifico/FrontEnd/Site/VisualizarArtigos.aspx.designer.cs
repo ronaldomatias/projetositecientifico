@@ -24,13 +24,13 @@ namespace sitecientifico.FrontEnd.Site
         protected global::System.Web.UI.WebControls.TextBox txtPesquisaArtigo;
 
         /// <summary>
-        /// btnPesquisarArtigo control.
+        /// ibtnPesquisarArtigo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPesquisarArtigo;
+        protected global::System.Web.UI.WebControls.ImageButton ibtnPesquisarArtigo;
 
         /// <summary>
         /// placeHolder control.

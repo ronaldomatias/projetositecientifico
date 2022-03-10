@@ -3,7 +3,7 @@
     display: flex;
     background-color: darkslateblue;
     text-align: center;
-    width: 50%;
+    width: 60%;
     margin: 10px auto;
     border: 2px groove;
     border-radius: 5px;
@@ -12,11 +12,10 @@
 .txtTitulo {
     margin: 2% auto;
     border-color: black;
-    Width: 90%; 
-    display: flex;
+    Width: 90%;
     resize: none;
     font-size: 15px;
-    height: 80px;
+    height: 20px;
     padding: 10px;
 }
 
@@ -26,11 +25,16 @@
     border-color: black;
     resize: vertical;
     Width: 90%;
-    Height: 100px;
+    min-height: 50px;
     padding: 10px;
 }
 
-
+.ddlCategorias {
+    margin: 2% auto;
+    Width: 50%;
+    border: none;
+    padding: 5px;
+}
 
 .labelInfo {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -44,6 +48,7 @@
     padding: 4px;
     font-size: 20px;
     border-style: none;
+    margin-top: 5%;
 }
 
     .botaoFormulario:hover {

@@ -9,31 +9,30 @@
 
 /*PESQUISAR ARTIGO*/
 .divPesquisaArtigo {
-    background-color: green;
+    display: flex;
+    background-color: black;
     width: 99%;
-    margin-bottom: 3%;
+    margin: 1% auto;
     padding: 5px;
     border-radius: 5px;
+    height: 30px;
 }
 
 
-.btnPesquisarArtigo {
-    padding: 5px;
-    background-color: gold;
+.ibtnPesquisarArtigo {
     border: none;
-    border-radius: 5px;
-    font-size: 15px;
-    font-family: 'Rockwell Condensed';
+    background-color: transparent;
 }
-    .btnPesquisarArtigo:hover {
-        background-color: white;
+    .ibtnPesquisarArtigo:hover {
         opacity: 0.5;
     }
 
 .txtPesquisaArtigo {
     width: 30%;
-    height: 25px;
     border-radius: 5px;
+    border-color: palegreen;
+    background-color: darkslateblue;
+    color: white;
 }
 
 .divPlaceHolder {

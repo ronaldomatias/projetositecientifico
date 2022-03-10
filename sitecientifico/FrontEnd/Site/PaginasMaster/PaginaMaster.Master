@@ -5,15 +5,16 @@
 
 <head runat="server">
     <title></title>
+    <meta charset="utf-8">
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloMasterPage.css" />
     <script src="../../Scripts/jquery-3.6.0.min.js"></script>
 
     <script type="text/javascript">
 
         function EsconderBarraInformacao() {
-            document.getElementById('<%= btnEsconderBarraInformacao.ClientID %>').style.display = "none";
-            document.getElementById('<%= vsInformacaoRetorno.ClientID %>').style.display = "none";
-            document.getElementById('<%= lblInformacaoRetorno.ClientID %>').style.display = "none";
+            $('#btnEsconderBarraInformacao').hide();
+            $('#vsInformacaoRetorno').hide();
+            $('#lblInformacaoRetorno').hide();
         }
 
     </script>

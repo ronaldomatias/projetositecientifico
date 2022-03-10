@@ -21,14 +21,6 @@ namespace sitecientifico.FrontEnd.Site
             }
         }
 
-        public void PesquisarArtigoPorTitulo(object sender, EventArgs e)
-        {
-            Artigo artigo = new Artigo(txtPesquisaArtigo.Text);
-
-            List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigosPorTitulo(artigo);
-            MontarArtigos(listaArtigos);
-        }
-
         public void MontarArtigos(List<Artigo> listaArtigos)
         {
             foreach (Artigo artigo in listaArtigos)
@@ -63,6 +55,14 @@ namespace sitecientifico.FrontEnd.Site
                 placeHolder.Controls.Add(painelLabels);
                 placeHolder.Controls.Add(painelEspacador);
             }
+        }
+
+        public void PesquisarArtigoPorTitulo(object sender, EventArgs e)
+        {
+            Artigo artigo = new Artigo(txtPesquisaArtigo.Text);
+
+            List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigosPorTitulo(artigo);
+            MontarArtigos(listaArtigos);
         }
     }
 }

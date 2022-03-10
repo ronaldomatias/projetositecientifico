@@ -14,8 +14,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="plhConteudo" runat="server">
 
     <div class="divPesquisaArtigo">
-        <asp:TextBox ID="txtPesquisaArtigo" CssClass="txtPesquisaArtigo" runat="server"></asp:TextBox>
-        <asp:Button ID="btnPesquisarArtigo" CssClass="btnPesquisarArtigo" Text="PESQUISAR" OnClick="PesquisarArtigoPorTitulo" runat="server" />
+        <asp:TextBox ID="txtPesquisaArtigo" CssClass="txtPesquisaArtigo" ToolTip="Digite aqui para pesquisar" runat="server"></asp:TextBox>
+        <asp:ImageButton ID="ibtnPesquisarArtigo" ImageUrl="/Imagens/Lupa-Verde-PNG.png" CssClass="ibtnPesquisarArtigo" OnClick="PesquisarArtigoPorTitulo" runat="server" />
     </div>
 
     <div class="divConteudo">

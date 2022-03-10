@@ -36,14 +36,15 @@ namespace sitecientifico.BancoDados
             return lista;
         }
 
-        public void NovoArtigo(Artigo artigo)
+        public void CadastrarArtigo(Artigo artigo)
         {
             using (NpgsqlConnection con = Conexao.ObterConexao())
             {
-                NpgsqlCommand sqlComando = new NpgsqlCommand("INSERT INTO artigo VALUES(default, @titulo, @descricao, @dtCriacao)", con);
+                NpgsqlCommand sqlComando = new NpgsqlCommand("INSERT INTO artigo VALUES(default, @titulo, @descricao, @dtCriacao, @nCdCategoria)", con);
                 sqlComando.Parameters.AddWithValue("titulo", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Titulo;
                 sqlComando.Parameters.AddWithValue("descricao", NpgsqlTypes.NpgsqlDbType.Varchar).Value = artigo.Descricao;
                 sqlComando.Parameters.AddWithValue("dtCriacao", NpgsqlTypes.NpgsqlDbType.Date).Value = artigo.dtCriacao;
+                sqlComando.Parameters.AddWithValue("nCdCategoria", NpgsqlTypes.NpgsqlDbType.Integer).Value = artigo.nCdCategoria;
 
                 sqlComando.CommandType = System.Data.CommandType.Text;
 
@@ -59,7 +60,7 @@ namespace sitecientifico.BancoDados
 
             using (NpgsqlConnection con = Conexao.ObterConexao())
             {
-                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao, dtCriacao FROM artigo WHERE titulo || descricao ILIKE '%" + artigo.Titulo + "%'", con);
+                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao, dtCriacao FROM artigo WHERE titulo || descricao ILIKE '%" + artigo.Titulo + "%' ORDER BY dtCriacao DESC", con);
 
                 con.Open();
                 NpgsqlDataReader dataReader = sqlComando.ExecuteReader();
