@@ -16,7 +16,7 @@ namespace sitecientifico.FrontEnd.Site
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (!IsPostBack )
+            if (!IsPostBack)
             {
                 List<Artigo> todosArtigos = new ArtigoDAO().PesquisarTodosArtigos();
                 MontarArtigos(todosArtigos);
@@ -24,6 +24,20 @@ namespace sitecientifico.FrontEnd.Site
 
         }
 
+        public void PesquisarArtigo(object sender, EventArgs e)
+        {
+            List<Artigo> artigosEncontrados = new ArtigoDAO().PesquisarArtigoPorTituloOuDescricao(txtPesquisaArtigo.Text);
+
+            if (artigosEncontrados.Count == 0)
+            {
+                Label lblInformacaoRetorno = new Label();
+                lblInformacaoRetorno.CssClass = "lblNenhumArtigoEncontrado";
+                lblInformacaoRetorno.Text = "Nenhum artigo encontrado! Você buscou por: " + txtPesquisaArtigo.Text;
+                placeHolder.Controls.Add(lblInformacaoRetorno);
+            }
+
+            MontarArtigos(artigosEncontrados);
+        }
 
         public void MontarArtigos(List<Artigo> listaArtigos)
         {
@@ -60,14 +74,6 @@ namespace sitecientifico.FrontEnd.Site
                 placeHolder.Controls.Add(painelEspacador);
             }
         }
-
-        public void PesquisarArtigo(object sender, EventArgs e)
-        {
-            List<Artigo> listaArtigos = new ArtigoDAO().PesquisarArtigoPorTituloOuDescricao(txtPesquisaArtigo.Text);
-            MontarArtigos(listaArtigos);
-        }
-
-
 
     }
 }

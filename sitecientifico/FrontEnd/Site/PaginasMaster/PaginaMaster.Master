@@ -12,14 +12,34 @@
     <script type="text/javascript">
 
         function EsconderBarraInformacao() {
+
             $('#btnEsconderBarraInformacao').hide();
             $('#vsInformacaoRetorno').hide();
             $('#lblInformacaoRetorno').hide();
         }
 
-        function recarregarPagina() {
+        function abrirPaginaVisualizarArtigos() {
 
             window.location.href = "VisualizarArtigos.aspx";
+
+            return false;
+        }
+
+    </script>
+
+    <script id="abrirPagina" type="text/javascript">
+
+        function abrirPaginaVisualizarArtigos() {
+
+            window.location.href = "VisualizarArtigos.aspx";
+
+            return false;
+        }
+        function abrirPaginaCriarArtigo() {
+
+            window.location.href = "CriarArtigo.aspx";
+
+            return false;
         }
 
     </script>
@@ -30,9 +50,9 @@
     <form id="form1" method="post" runat="server">
         <div class="divCabecalho">
             <div class="botoesMenu" runat="server">
-                <asp:Button class="botaoCabecalho" Text="Novo artigo" PostBackUrl="~/FrontEnd/Site/CriarArtigo.aspx" runat="server" />
+                <asp:Button class="botaoCabecalho" Text="Novo artigo" OnClientClick="return abrirPaginaCriarArtigo();" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Astronomia" runat="server" />
-                <asp:Button class="botaoCabecalho" Text="Ler Artigos" OnClientClick="recarregarPagina(); return false;" runat="server" />
+                <asp:Button class="botaoCabecalho" Text="Ler Artigos" OnClientClick="return abrirPaginaVisualizarArtigos();" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Fórum" runat="server" />
             </div>
         </div>
