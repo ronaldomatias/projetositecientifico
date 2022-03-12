@@ -17,6 +17,11 @@
             $('#lblInformacaoRetorno').hide();
         }
 
+        function recarregarPagina() {
+
+            window.location.href = "VisualizarArtigos.aspx";
+        }
+
     </script>
 
     <asp:ContentPlaceHolder ID="plhScript" runat="server"></asp:ContentPlaceHolder>
@@ -27,7 +32,7 @@
             <div class="botoesMenu" runat="server">
                 <asp:Button class="botaoCabecalho" Text="Novo artigo" PostBackUrl="~/FrontEnd/Site/CriarArtigo.aspx" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Astronomia" runat="server" />
-                <asp:Button class="botaoCabecalho" Text="Ler Artigos" PostBackUrl="~/FrontEnd/Site/VisualizarArtigos.aspx" runat="server" />
+                <asp:Button class="botaoCabecalho" Text="Ler Artigos" OnClientClick="recarregarPagina(); return false;" runat="server" />
                 <asp:Button class="botaoCabecalho" Text="Fórum" runat="server" />
             </div>
         </div>

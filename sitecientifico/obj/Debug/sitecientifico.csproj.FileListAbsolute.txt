@@ -50,15 +50,9 @@ C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifi
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\roslyn\vbc.rsp
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\roslyn\VBCSCompiler.exe
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.csproj.AssemblyReference.cache
-C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.csproj.CoreCompileInputs.cache
-C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.csproj.CopyComplete
-C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.dll
-C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.pdb
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\Microsoft.Bcl.HashCode.dll
+C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\Npgsql.dll
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\System.Buffers.dll
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\System.Collections.Immutable.dll
@@ -85,3 +79,9 @@ C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifi
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\System.Threading.Channels.xml
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\System.ValueTuple.xml
+C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.csproj.AssemblyReference.cache
+C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.csproj.CoreCompileInputs.cache
+C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.csproj.CopyComplete
+C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.dll
+C:\Users\ronal\OneDrive\Documentos\Project VS\projetositecientifico\sitecientifico\sitecientifico\obj\Debug\sitecientifico.pdb

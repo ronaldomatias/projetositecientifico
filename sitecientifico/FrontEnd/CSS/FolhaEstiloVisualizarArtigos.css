@@ -1,10 +1,11 @@
 ﻿.divConteudo {
     background-color: darkslateblue;
     text-align: center;
-    width: 50%;
+    width: 60%;
     margin: 10px auto;
-    border: 2px groove;
+    border: 2px outset;
     border-radius: 5px;
+    border-color: palegreen;
 }
 
 /*PESQUISAR ARTIGO*/
@@ -31,8 +32,8 @@
     width: 30%;
     border-radius: 5px;
     border-color: palegreen;
-    background-color: darkslateblue;
-    color: white;
+    background-color: darkgray;
+    padding: 5px;
 }
 
 .divPlaceHolder {
@@ -73,6 +74,9 @@
 .painelLabels {
     background-color: black;
     padding: 10px;
+    border-left: 3px outset;
+    border-radius: 5px;
+    border-color: pink;
 }
 
 

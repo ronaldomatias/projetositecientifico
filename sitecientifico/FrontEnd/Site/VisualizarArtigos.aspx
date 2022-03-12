@@ -4,9 +4,11 @@
     <link rel="stylesheet" href="/FrontEnd/CSS/FolhaEstiloVisualizarArtigos.css" />
 
     <script type="text/javascript">
+
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
         }
+
     </script>
 </asp:Content>
 
@@ -15,7 +17,7 @@
 
     <div class="divPesquisaArtigo">
         <asp:TextBox ID="txtPesquisaArtigo" CssClass="txtPesquisaArtigo" ToolTip="Digite aqui para pesquisar" runat="server"></asp:TextBox>
-        <asp:ImageButton ID="ibtnPesquisarArtigo" ImageUrl="/Imagens/Lupa-Verde-PNG.png" CssClass="ibtnPesquisarArtigo" OnClick="PesquisarArtigoPorTitulo" runat="server" />
+        <asp:ImageButton ID="ibtnPesquisarArtigo" ImageUrl="/Imagens/Lupa-Verde-PNG.png" CssClass="ibtnPesquisarArtigo" OnClick="PesquisarArtigo" runat="server" />
     </div>
 
     <div class="divConteudo">

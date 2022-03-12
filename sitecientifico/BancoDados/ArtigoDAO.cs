@@ -11,7 +11,7 @@ namespace sitecientifico.BancoDados
     public class ArtigoDAO
     {
 
-        public List<Artigo> ProcurarArtigos()
+        public List<Artigo> PesquisarTodosArtigos()
         {
             List<Artigo> lista = new List<Artigo>();
 
@@ -54,13 +54,13 @@ namespace sitecientifico.BancoDados
             }
         }
 
-        public List<Artigo> ProcurarArtigosPorTitulo(Artigo artigo)
+        public List<Artigo> PesquisarArtigoPorTituloOuDescricao(string txtPesquisaArtigo)
         {
-            List<Artigo> lista = new List<Artigo>();
+            List<Artigo> listaArtigos = new List<Artigo>();
 
             using (NpgsqlConnection con = Conexao.ObterConexao())
             {
-                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao, dtCriacao FROM artigo WHERE titulo || descricao ILIKE '%" + artigo.Titulo + "%' ORDER BY dtCriacao DESC", con);
+                NpgsqlCommand sqlComando = new NpgsqlCommand("SELECT titulo, descricao, dtCriacao FROM artigo WHERE titulo || descricao ILIKE '%" + txtPesquisaArtigo + "%' ORDER BY dtCriacao DESC", con);
 
                 con.Open();
                 NpgsqlDataReader dataReader = sqlComando.ExecuteReader();
@@ -69,14 +69,14 @@ namespace sitecientifico.BancoDados
                 {
                     while (dataReader.Read())
                     {
-                        lista.Add(new Artigo(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2)));
+                        listaArtigos.Add(new Artigo(dataReader.GetString(0), dataReader.GetString(1), dataReader.GetDateTime(2)));
                     }
                     dataReader.NextResult();
                 }
                 con.Close();
             }
 
-            return lista;
+            return listaArtigos;
         }
 
 

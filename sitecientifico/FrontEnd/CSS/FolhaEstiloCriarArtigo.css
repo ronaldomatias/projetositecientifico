@@ -5,8 +5,9 @@
     text-align: center;
     width: 60%;
     margin: 10px auto;
-    border: 2px groove;
+    border: 2px outset;
     border-radius: 5px;
+    border-color: palegreen;
 }
 
 .txtTitulo {

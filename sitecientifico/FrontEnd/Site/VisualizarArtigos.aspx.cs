@@ -11,15 +11,19 @@ namespace sitecientifico.FrontEnd.Site
 {
     public partial class VisualizarArtigos : System.Web.UI.Page
     {
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+
+            if (!IsPostBack )
             {
-                // MONTAGEM DA ÁREA DE VISUALIZAÇÃO DOS ARTIGOS;
-                List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigos();
-                MontarArtigos(listaArtigos);
+                List<Artigo> todosArtigos = new ArtigoDAO().PesquisarTodosArtigos();
+                MontarArtigos(todosArtigos);
             }
+
         }
+
 
         public void MontarArtigos(List<Artigo> listaArtigos)
         {
@@ -57,12 +61,13 @@ namespace sitecientifico.FrontEnd.Site
             }
         }
 
-        public void PesquisarArtigoPorTitulo(object sender, EventArgs e)
+        public void PesquisarArtigo(object sender, EventArgs e)
         {
-            Artigo artigo = new Artigo(txtPesquisaArtigo.Text);
-
-            List<Artigo> listaArtigos = new ArtigoDAO().ProcurarArtigosPorTitulo(artigo);
+            List<Artigo> listaArtigos = new ArtigoDAO().PesquisarArtigoPorTituloOuDescricao(txtPesquisaArtigo.Text);
             MontarArtigos(listaArtigos);
         }
+
+
+
     }
 }
